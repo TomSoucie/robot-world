@@ -1,4 +1,5 @@
 require_relative '../models/robot.rb'
+require 'pry'
 
 class RobotWorldApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
@@ -24,7 +25,7 @@ class RobotWorldApp < Sinatra::Base
 
   get '/robots/:id' do
     @robot = Robot.find(params[:id])
-    erb :individual
+    erb :show
   end
 end
 
